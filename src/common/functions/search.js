@@ -1,3 +1,4 @@
+/**change back here */
 import filmsData from "../../films.json";
 import speciesData from "../../species.json";
 
@@ -14,7 +15,7 @@ export function searchFilmByUrl(filmsArr) {
 
 export function searchSpeciesByUrl(speciesArr) {
   if (!speciesArr.length) {
-    return "Unknown";
+    return "unknown";
   }
   const filteredArray = speciesData.filter((species) => {
     if (speciesArr.includes(species.url)) {

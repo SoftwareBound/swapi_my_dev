@@ -11,3 +11,14 @@ export function getFilterMessage(filter) {
     return placeholder.EYE_COLOR_MESSAGE;
   }
 }
+
+export function checkValidHeightInput(arr) {
+  if (
+    Number.isInteger(parseInt(arr[0])) &&
+    Number.isInteger(parseInt(arr[1]))
+  ) {
+    return true;
+  }
+
+  return false;
+}

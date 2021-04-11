@@ -7,7 +7,13 @@ import { button_name_filter as btn_arr } from "./common/constants/button_name";
 import { api_urls as api } from "./common/constants/api";
 import Spinner from "./common/components/Spinner";
 import { titles } from "./common/constants/title";
-
+/**IMPORTANT MESSAGE !!!!!!!!
+ * BY THE TIME THE PROJECT UPLOADED TO GITHUB THE SWAPI SERVER WENT DOWN
+ * SO I MADE SOME MOCK DATA SO THAT YOU CAN SEE THE INNER LOGIC OF MY APP
+ * ANYWAY, I LEFT THE API FETCTHIG LOGIC ALSO SO YOU COULD MAKE IMPRESSION OF IT
+ *
+ *
+ */
 function App() {
   const buttonArray = [
     btn_arr.NAME,
@@ -16,7 +22,7 @@ function App() {
     btn_arr.EYE_COLOR,
   ];
   const [searchResults, setSearchResults] = useState(null);
-  /* const people = useFetch(`${api.BASE_URL}/${api.PEOPLE}`, "people"); */
+  /* const people = useFetch(`${api.BASE_URL}/${api.PEOPLE}`); */
   /* const films = useFetch(`${api.BASE_URL}/${api.FILMS}`);
   const species = useFetch(`${api.BASE_URL}/${api.SPECIES}`); */
 

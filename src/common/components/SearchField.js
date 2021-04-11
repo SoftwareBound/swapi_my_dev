@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
-import { getFilterMessage } from "../functions/filter";
+import { getFilterMessage, checkValidHeightInput } from "../functions/filter";
 import { error_messages_search as error } from "../constants/error_messages";
 import { button_name_filter as btn } from "../constants/button_name";
 import { placeholder_messages as placeholder } from "../constants/placeholder_messages";
@@ -30,7 +30,7 @@ const Search = ({ buttonArray, database, getFilteredData }) => {
     const filteredData = database.filter((entity) => {
       if (
         searchFilter === btn.NAME.toLowerCase() ||
-        searchFilter === btn.EYE_COLOR.toLowerCase()
+        searchFilter === btn.EYE_COLOR_PROCESSED.toLowerCase()
       ) {
         if (
           entity[`${searchFilter}`]
@@ -49,15 +49,11 @@ const Search = ({ buttonArray, database, getFilteredData }) => {
           return true;
         }
       }
-      if (searchFilter === btn.HEIGHT.toLowerCase()) {
+      if (
+        searchFilter === btn.HEIGHT.toLowerCase() &&
+        checkValidHeightInput(searchFilterValue.toString().split("-"))
+      ) {
         const valueToArr = searchFilterValue.toString().split("-");
-        if (
-          !Number.isInteger(valueToArr[0]) ||
-          !Number.isInteger(valueToArr[1])
-        ) {
-          console.log("not");
-          return false;
-        }
         const minHeight = Math.min.apply(null, valueToArr);
         const maxHeight = Math.max.apply(null, valueToArr);
         if (
