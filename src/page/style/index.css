@@ -1,0 +1,4 @@
+.people-item:hover {
+  cursor: pointer;
+  background: rgb(155, 155, 155);
+}
